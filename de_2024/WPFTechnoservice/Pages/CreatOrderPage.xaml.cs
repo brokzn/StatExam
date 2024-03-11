@@ -46,5 +46,10 @@ namespace WPFTechnoservice.Pages
             _context.SaveChanges();
             MessageBox.Show("Заказ успешно добавлен в базу данных!");
         }
+
+        private void LogOutButton_Click(object sender, RoutedEventArgs e)
+        {
+            NavigationService.Navigate(new RegistrationPage());
+        }
     }
 }

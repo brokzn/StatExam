@@ -4,6 +4,9 @@
              xmlns:local="clr-namespace:WPFTechnoservice"
              StartupUri="MainWindow.xaml">
     <Application.Resources>
-         
+        <Style x:Key="LabelOrderEdit" TargetType="Label">
+            <Setter Property="VerticalAlignment" Value="Center"/>
+            <Setter Property="Margin" Value="30 0 0 0"/>
+        </Style>
     </Application.Resources>
 </Application>

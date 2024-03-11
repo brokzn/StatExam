@@ -15,13 +15,6 @@ namespace WPFTechnoservice.Pages
             InitializeComponent();
         }
 
-        //private async void RegistrationButton_Click(object sender, RoutedEventArgs e)
-        //{
-        //    var mainWindow = App.Current.MainWindow as MainWindow;
-
-        //    mainWindow.MainFrame.Navigate(new RegistrationPage());
-        //}
-
         private async void AuthButton_Click(object sender, RoutedEventArgs e)
         {
             var user = await _context.Users
@@ -37,16 +30,17 @@ namespace WPFTechnoservice.Pages
 
             switch (user.UserRoleId)
             {
-                case 1: MessageBox.Show("Вы вошли как менеджер!");
-                   // NavigationService.Navigate(new CreatOrderPage(user));
+                case 1:
+                    MessageBox.Show("Вы вошли как менеджер!");
+                     NavigationService.Navigate(new ManagerPage(user));
                     break;
                 case 2:
                     MessageBox.Show("Вы вошли как администратор!");
-                  //  NavigationService.Navigate(new CreatOrderPage(user));
+                     NavigationService.Navigate(new AdminPage(user));
                     break;
                 case 3:
                     MessageBox.Show("Вы вошли как мастер!");
-                   // NavigationService.Navigate(new CreatOrderPage(user));
+                    NavigationService.Navigate(new MasterPage(user));
                     break;
                 case 4:
                     MessageBox.Show("Вы вошли как клиент!");
@@ -54,5 +48,12 @@ namespace WPFTechnoservice.Pages
                     break;
             }
         }
+
+
+        private void BackToRegButton_Click(object sender, RoutedEventArgs e)
+        {
+            NavigationService.Navigate(new RegistrationPage());
+        }
+
     }
 }

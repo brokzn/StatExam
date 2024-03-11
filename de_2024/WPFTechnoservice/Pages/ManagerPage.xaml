@@ -1,0 +1,144 @@
+﻿<Page x:Class="WPFTechnoservice.Pages.ManagerPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:WPFTechnoservice.Pages"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Loaded="Page_Loaded"
+      Title="ManagerPage">
+
+    <Grid>
+        <StackPanel>
+            <Label Content="Страница Менеджера" />
+        </StackPanel>
+        <Border Name="OrderManageBack"  Background="Black" Panel.ZIndex="2" Opacity="0.3"/>
+        
+        <Grid Width="500" Name="OrderManage" Background="Gray" Panel.ZIndex="2" Margin="0 50 0 50">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition />
+                <ColumnDefinition />
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+            </Grid.RowDefinitions>
+
+            <Label Grid.Row="0"
+                   Content="Дата создания"
+                   Style="{StaticResource LabelOrderEdit}" />
+            <Label  Grid.Row="1"
+                    Content="ИД оборудования"
+                    Style="{StaticResource LabelOrderEdit}" />
+            <Label  Grid.Row="2"
+                    Content="Тип неисправности"
+                    Style="{StaticResource LabelOrderEdit}" />
+            <Label  Grid.Row="3"
+                    Content="Описания проблемы"
+                    Style="{StaticResource LabelOrderEdit}" />
+            <Label  Grid.Row="4"
+                    Content="ИД клиента"
+                    Style="{StaticResource LabelOrderEdit}" />
+            <Label  Grid.Row="5"
+                    Content="Статус заявки"
+                    Style="{StaticResource LabelOrderEdit}" />
+            <Label  Grid.Row="6"
+                    Content="Этап выполнения"
+                    Style="{StaticResource LabelOrderEdit}" />
+            <Label  Grid.Row="7"
+                    Content="Приоритет"
+                    Style="{StaticResource LabelOrderEdit}" />
+            <Label  Grid.Row="8"
+                    Content="Дополнительная информация"
+                    Style="{StaticResource LabelOrderEdit}" />
+            <Label  Grid.Row="9"
+                    Content="Мастер"
+                    Style="{StaticResource LabelOrderEdit}" />
+            <Label  Grid.Row="10"
+                    Content="Завершение заказа"
+                    Style="{StaticResource LabelOrderEdit}" />
+            <Label  Grid.Row="11"
+                    Content="Качество выполненной работы"
+                    Style="{StaticResource LabelOrderEdit}" />
+            <Label  Grid.Row="12"
+                    Content="Дата завершения заказа"
+                    Style="{StaticResource LabelOrderEdit}" />
+
+        </Grid>
+        <ListBox Margin="0 50 0 50"
+                 SelectionChanged="Orders_SelectionChanged"
+                 x:Name="Orders">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <Grid Background="Transparent"
+                          Margin="0 10 0 0">
+                        <StackPanel>
+                            <TextBlock>
+                                <Run Text="Дата создания:" />
+                                <Run Text="{Binding DateCreted}" />
+                                <LineBreak />
+                                <Run Text="ИД оборудования:" />
+                                <Run Text="{Binding EquipmentId}" />
+                                <LineBreak />
+                                <Run Text="Тип неисправности:" />
+                                <Run Text="{Binding TypeMalfunction}" />
+                                <LineBreak />
+                                <Run Text="Описания проблемы:" />
+                                <Run Text="{Binding DescriptionProblems}" />
+                                <LineBreak />
+                                <Run Text="ИД клиента:" />
+                                <Run Text="{Binding ClientId}" />
+                                <LineBreak />
+                                <Run Text="Статус заявки:" />
+                                <Run Text="{Binding OrderStatusId}" />
+                                <LineBreak />
+                                <Run Text="Этап выполнения:" />
+                                <Run Text="{Binding StageExecutionId}" />
+                                <LineBreak />
+                                <Run Text="Приоритет:" />
+                                <Run Text="{Binding PriorityId}" />
+                                <LineBreak />
+                                <Run Text="Дополнительная информация:" />
+                                <Run Text="{Binding AdditionalInformation}" />
+                                <LineBreak />
+                                <Run Text="Мастер:" />
+                                <Run Text="{Binding ExecutorId}" />
+                                <LineBreak />
+                                <Run Text="Завершение заказа:" />
+                                <Run Text="{Binding EndProcessingTime}" />
+                                <LineBreak />
+                                <Run Text="Качество выполненной работы:" />
+                                <Run Text="{Binding QualityWorkPerformedId}" />
+                                <LineBreak />
+                                <Run Text="Дата завершения заказа:" />
+                                <Run Text="{Binding EndDateOfWork}" />
+                            </TextBlock>
+                        </StackPanel>
+
+                    </Grid>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+        <Button Content="Выйти"
+                Width="100"
+                Height="40"
+                HorizontalAlignment="Left"
+                VerticalAlignment="Bottom"
+                Name="LogOutButton"
+                Margin="0 100 0 0"
+                Click="LogOutButton_Click" />
+    </Grid>
+</Page>

@@ -6,7 +6,8 @@
         xmlns:local="clr-namespace:WPFTechnoservice"
         mc:Ignorable="d"
         Loaded="Window_Loaded"
-        Title="MainWindow" Height="450" Width="800">
+        MinHeight="600"
+        Title="ТехноСервис" Height="450" Width="800">
     <Grid>
         <Frame x:Name="MainFrame"
                NavigationUIVisibility="Hidden"

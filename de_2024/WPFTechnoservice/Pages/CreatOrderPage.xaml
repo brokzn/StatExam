@@ -25,6 +25,7 @@
 
             
             <Button Content="Создать заявку" Click="CreateOrderButton_Click"/>
+            <Button Content="Выйти" Name="LogOutButton" Margin="0 100 0 0" Click="LogOutButton_Click" />
         </StackPanel>
     </Grid>
 </Page>
